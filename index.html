@@ -32,10 +32,20 @@
   </header>
 
   <main class="max-w-6xl mx-auto">
-   
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-6 gap-4">
+      <div>
+        <h2 class="text-2xl font-bold text-gray-800">Available Jobs</h2>
+        <div role="tablist" class="tabs tabs-boxed mt-4 bg-gray-200">
+          <button id="tab-all" class="tab tab-active transition-all" onclick="switchTab('all')">All</button>
+          <button id="tab-interview" class="tab transition-all" onclick="switchTab('interview')">Interview</button>
+          <button id="tab-rejected" class="tab transition-all" onclick="switchTab('rejected')">Rejected</button>
+        </div>
+      </div>
+      <p class="text-gray-500 font-semibold"><span id="section-count">0</span> Jobs</p>
+    </div>
 
   </main>
-  
+
 
 </body>
 
