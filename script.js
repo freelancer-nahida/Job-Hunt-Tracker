@@ -1,4 +1,4 @@
-// 1. Initial Data
+
 let jobs = [
     { id: 1, company: "Mobile First Corp", pos: "React Native Developer", loc: "Remote", type: "Full-time", sal: "$130k - $175k", desc: "Build cross-platform mobile applications using React Native.", status: "none" },
     { id: 2, company: "WebFlow Agency", pos: "Web Designer", loc: "LA, CA", type: "Part-time", sal: "$80k - $120k", desc: "Create stunning web experiences for high-profile clients.", status: "none" },
@@ -12,12 +12,12 @@ let jobs = [
 
 let currentTab = 'all';
 
-// 2. Core Functions
+
 function render() {
     const container = document.getElementById('job-container');
     const emptyState = document.getElementById('empty-state');
     
-    // Filter jobs based on tab
+  
     const filteredJobs = jobs.filter(job => {
         if (currentTab === 'all') return true;
         return job.status === currentTab;
@@ -68,14 +68,14 @@ function updateDashboard() {
     document.getElementById('interview-count').innerText = interview;
     document.getElementById('rejected-count').innerText = rejected;
 
-    // Update section count based on current tab
+   
     const currentCount = jobs.filter(j => currentTab === 'all' ? true : j.status === currentTab).length;
     document.getElementById('section-count').innerText = currentCount;
 }
 
 function switchTab(tab) {
     currentTab = tab;
-    // UI Tab toggle
+  
     ['all', 'interview', 'rejected'].forEach(t => {
         document.getElementById(`tab-${t}`).classList.remove('tab-active');
     });
@@ -95,5 +95,5 @@ function deleteJob(id) {
     render();
 }
 
-// Initial Run
+
 render();
